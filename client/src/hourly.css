@@ -1,0 +1,333 @@
+#hourly div {
+  background-color: transparent;
+}
+#hourly {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px rgba(255, 255, 255, 0.2) solid;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+#hourly > h4 {
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: xx-large;
+  margin-bottom: 10px !important;
+}
+#hourly > h4 i {
+  color: cornflowerblue;
+}
+#hourly-weather {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+#hourly-weather::-webkit-scrollbar {
+  height: 7px;
+}
+#hourly-weather::-webkit-scrollbar-track {
+  background: transparent;
+}
+#hourly-weather::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  border-radius: 5px;
+}
+#hourly-weather::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+#hourly-weather::-webkit-scrollbar-button {
+  background: transparent;
+  cursor: pointer;
+  width: 0px;
+  height: 0px;
+}
+.hour {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 180px;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  padding: 15px 0;
+  border-radius: 20px;
+  gap: 2px;
+}
+.hour .small {
+  margin-bottom: 2px !important;
+  color: #49baa7;
+  margin-top: 12px !important;
+  font-size: 14px;
+}
+.hour i {
+  color: #ffef40e3;
+  font-size: 15px;
+}
+.hour h4 {
+  font-size: 22px !important;
+  font-weight: 500 !important;
+}
+.hour #temp {
+  margin-bottom: 20px !important;
+  margin-top: 10px !important;
+  font-size: 35px;
+}
+.hour #hour {
+  letter-spacing: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(222, 222, 222, 0.897);
+}
+#hourly-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+#dates {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 0 10px;
+  border-right: 2px rgba(255, 255, 255, 0.783) solid;
+  min-width: 150px;
+}
+#dates button {
+  border: none;
+  padding: 3px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 12px;
+  font-weight: lighter;
+  letter-spacing: 0.2px;
+  color: rgba(255, 222, 222, 0.7);
+}
+.date {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-right: 8px !important;
+}
+#dates button.active {
+  color: white !important;
+  box-shadow: rgba(255, 255, 255, 0.8) 0px 0px 10px 0px;
+}
+#dates button:hover {
+  color: white !important;
+}
+#dates button.active .date {
+  color: white !important;
+}
+#dates button:hover .date {
+  color: white !important;
+}
+
+@media (min-width: 1250px) {
+  #hourly {
+    height: 346px !important;
+  }
+}
+@media (max-width: 1250px) {
+  #hourly {
+    padding: 10px 14px;
+  }
+  #hourly > h4 {
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 35px;
+    margin-bottom: 8px !important;
+  }
+  #hourly-weather {
+    gap: 10px;
+  }
+  .hour {
+    min-width: 160px;
+    padding: 13px 0;
+  }
+  .hour .small {
+    margin-top: 10px !important;
+    font-size: 12px;
+  }
+  .hour i {
+    font-size: 13px;
+  }
+  .hour h4 {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+  }
+  .hour #temp {
+    margin-bottom: 18px !important;
+    margin-top: 8px !important;
+    font-size: 32px;
+  }
+  .hour #hour {
+    letter-spacing: 4px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  #hourly-1 {
+    gap: 9px;
+  }
+  #dates {
+    padding: 0 17px 0 8px;
+    min-width: 140px;
+    gap: 5px;
+  }
+  #dates button {
+    padding: 3px 5px;
+    font-size: 12px;
+  }
+  .date {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-right: 6px;
+  }
+}
+@media (max-width: 850px) {
+  #hourly {
+    padding: 10px 13px;
+    gap: 9px;
+  }
+  #hourly > h4 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin-bottom: 7px !important;
+  }
+  #hourly-weather {
+    gap: 8px;
+  }
+  .hour {
+    min-width: 140px;
+    padding: 11px 0;
+  }
+  .hour .small {
+    margin-top: 8px !important;
+    font-size: 11px;
+  }
+  .hour i {
+    font-size: 11px;
+  }
+  .hour h4 {
+    font-size: 18px !important;
+    font-weight: 300 !important;
+  }
+  .hour #temp {
+    margin-bottom: 16px !important;
+    margin-top: 7px !important;
+    font-size: 30px;
+  }
+  .hour #hour {
+    letter-spacing: 3px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  #hourly-1 {
+    gap: 8px;
+  }
+  #dates {
+    padding: 0 15px 0 7px;
+    min-width: 120px;
+  }
+  #dates button {
+    padding: 2px 4px;
+    font-size: 10px;
+  }
+  .date {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-right: 5px !important;
+  }
+}
+@media (max-width: 500px) {
+  #hourly {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  #hourly > h4 {
+    font-weight: 200;
+    font-size: 25px;
+    margin-bottom: 6px !important;
+  }
+  #hourly-weather {
+    gap: 7px;
+  }
+  .hour {
+    min-width: 120px;
+    padding: 10px 0;
+    height: 200px;
+  }
+  .hour .small {
+    margin-top: 7px !important;
+    font-size: 10px;
+  }
+  .hour i {
+    font-size: 10px;
+  }
+  .hour h4 {
+    font-size: 16px !important;
+    font-weight: 200 !important;
+  }
+  .hour #temp {
+    margin-bottom: 14px !important;
+    margin-top: 6px !important;
+    font-size: 27px;
+  }
+  .hour #hour {
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 300;
+  }
+  #hourly-1 {
+    gap: 7px;
+  }
+  #dates {
+    padding: 0 13px 0 6px;
+    min-width: 50px;
+  }
+  #dates button {
+    padding: 2px 3px;
+    font-size: 8px;
+  }
+  .dates {
+    font-size: 14px;
+    font-weight: 200;
+    margin-right: 0px !important;
+  }
+
+  /* extra properties for badge  */
+  .date-btn {
+    position: relative;
+  }
+  .mon-year {
+    display: none;
+  }
+  .mon-year.show {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: max-content;
+    height: max-content;
+    left: 50px;
+    top: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: normal;
+    background-color: rgb(230, 230, 230) !important;
+    padding: 2px 6px !important;
+    border-radius: 5px;
+    color: black !important;
+  }
+}

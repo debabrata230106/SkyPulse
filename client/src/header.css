@@ -1,0 +1,257 @@
+#main-1 {
+  padding: 8px 20px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px rgba(255, 255, 255, 0.2) solid;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+#main11 {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  background-color: transparent;
+}
+#logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 15px;
+}
+#title {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+#search {
+  border: none;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.3s ease;
+}
+#search > input {
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+  font-weight: lighter;
+  color: white;
+  width: 200px;
+  transition: all 0.1s ease;
+  padding: 10px 20px;
+}
+#search > input:focus {
+  outline: none;
+}
+#search > input::placeholder {
+  color: white;
+  font-size: 15px;
+  font-weight: lighter;
+  opacity: 0.7;
+  letter-spacing: 3px;
+}
+#search > button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.1s ease;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 8px 14px;
+  flex: 1 !important;
+}
+#search > button > i {
+  font-size: 17px;
+}
+
+#search button span {
+  color: rgb(121, 255, 121);
+}
+#search button i {
+  color: rgb(121, 255, 121);
+}
+#search > button:hover {
+  opacity: 1;
+  background-color: rgb(34, 171, 34) !important;
+  border: 1px solid rgb(130, 171, 130) !important;
+}
+#search button:hover span {
+  color: white;
+}
+#search button:hover i {
+  color: white;
+}
+
+#search:focus-within {
+  box-shadow: greenyellow 0px 0px 10px 0px;
+}
+
+#login-out {
+  background-color: transparent;
+}
+#login-out > button {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 15px;
+  display: flex;
+  background: transparent;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.1s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+
+/* logout state  */
+#login-out > button.logout {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+#login-out > button.logout > p {
+  color: rgba(255, 255, 255, 0.6);
+}
+#login-out > button.logout > i {
+  color: rgba(255, 255, 255, 0.7);
+}
+#login-out > button.logout:hover > p {
+  color: rgba(255, 255, 255, 0.9);
+}
+#login-out > button.logout:hover > i {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* login state  */
+#login-out > button.login {
+  border-color: rgb(255, 70, 70);
+}
+#login-out > button.login > p {
+  color: rgba(255, 255, 255, 0.9);
+}
+#login-out > button.login > i {
+  color: rgb(255, 70, 70);
+}
+
+#login-out > button.login:hover {
+  background-color: rgb(255, 70, 70); 
+  border-color: rgb(255, 140, 140);
+}
+#login-out > button.login:hover > p {
+  color: rgba(255, 255, 255, 1);
+}
+#login-out > button.login:hover > i {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+/* #user style inline  */
+@media (max-width: 1200px) {
+  #title {
+    display: none;
+  }
+  #user-text {
+    display: none;
+  }
+  #search-text {
+    display: none;
+  }
+  #search > button {
+    padding: 12px 14px;
+  }
+}
+@media (max-width: 850px) {
+  #logo {
+    height: 35px;
+    width: 35px;
+  }
+  #main-1 {
+    padding: 8px 15px;
+  }
+  #search > input {
+    padding: 8px 15px;
+    font-size: 12px;
+    width: 160px;
+  }
+  #search > input::placeholder {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  #search > button {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  #search > button > i {
+  font-size: 16px;
+}
+  #search {
+    gap: 15px;
+  }
+  .log-text {
+    display: none;
+  }
+  #login-out > button {
+    padding: 5px 10px;
+    font-size: 18px;
+  }
+  #user {
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 450px) {
+  #logo {
+    height: 25px;
+    width: 25px;
+  }
+  #main-1 {
+    padding: 6px 12px;
+  }
+  #search > input {
+    padding: 6px 12px;
+    font-size: 10px;
+    width: 120px;
+  }
+  
+  #search > input::placeholder {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  #search > button {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+  #search > button > i {
+  font-size: 14px;
+}
+  #search {
+    gap: 10px;
+  }
+  #login-out > button {
+    padding: 4px 6px;
+    font-size: 15px;
+  }
+  #user {
+    transform: scale(0.7);
+  }
+}

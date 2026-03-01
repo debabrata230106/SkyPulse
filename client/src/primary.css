@@ -1,0 +1,546 @@
+#left1 {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px rgba(255, 255, 255, 0.2) solid;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: space-between;
+  margin: 20px 0;
+
+  padding: 15px;
+  flex-grow: 0;
+}
+#left1 div {
+  background-color: transparent;
+}
+#left11 {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+#left111 {
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  height: 100% !important;
+}
+#degree-toggle {
+  padding: 0 !important;
+  border-radius: 0% !important;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  height: 30px;
+  margin-bottom: 5px;
+}
+#degree-toggle div {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-top: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  padding-top: 0 !important;
+
+  font-size: large;
+  height: 30px;
+  width: 40px;
+  padding: 3px 10px;
+}
+#far {
+  /* border-bottom: 2px solid rgba(38, 140, 230, 0.1);
+  border-left: 2px solid rgb(38, 140, 230, 0.1);
+  border-right: 2px solid rgb(38, 140, 230, 0.1); */
+  background-color: rgb(38, 140, 230) !important;
+  color: white !important;
+  /* border-top-right-radius: 20px; */
+}
+#celc {
+  /* border-bottom: 2px solid rgb(255, 70, 70, 0.1);
+  border-left: 2px solid rgb(255, 70, 70, 0.1);
+  border-right: 2px solid rgb(255, 70, 70, 0.1); */
+  background-color: rgb(255, 70, 70) !important;
+  color: white !important;
+  /* border-top-left-radius: 20px; */
+}
+#degree-toggle div.active {
+  opacity: 1;
+}
+#degree-toggle div.active {
+  cursor: pointer;
+}
+#left-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  padding-top: 0px;
+  height: min-content;
+}
+#left1111 {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  margin-right: 0;
+}
+#left1111 h5 {
+  border-radius: 10px;
+  width: 100%;
+  color: rgba(99, 239, 120, 0.8);
+  font-weight: 100;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 7px;
+  font-size: 18px;
+  padding: 5px 15px;
+}
+#left1111 h5 i {
+  color: rgba(99, 239, 120);
+
+  font-size: 18px;
+}
+#left1111 h5 span {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+
+  font-size: 25px;
+  padding-left: 10px !important;
+}
+#left1111 > h1 {
+  font-size: 60px;
+  font-weight: 200 !important;
+}
+#left1111 > h1 > span {
+  font-size: 30px;
+  font-weight: 100 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+#left112 {
+  height: 18%;
+}
+#left112 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 18px;
+  column-gap: 20px;
+}
+#left112 p {
+  letter-spacing: 3px;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 222, 222, 0.7);
+}
+#city-name {
+  text-transform: capitalize;
+  font-size: 22px !important;
+  color: rgba(255, 222, 222, 0.9) !important;
+}
+#left1111 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: start;
+}
+#left1112 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#left1112 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#left1112 > div i {
+  font-size: 45px;
+  color: #ffef40e3;
+}
+#left1112 p {
+  margin-top: 10px !important;
+  color: #63dac6;
+  font-size: 25px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+#left12 {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 20px;
+}
+#left12 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+#left12 > div i {
+  color: #ffef40e3;
+
+  font-size: 20px;
+}
+#left12 > div p {
+  color: #49baa7;
+  font-weight: 100;
+
+  font-size: 18px;
+}
+#left12 > div h1 {
+  font-weight: lighter;
+
+  font-size: 50px;
+}
+#left12 > div h5 {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+#aqi-clr {
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  margin-left: 10px;
+}
+#aqi-description {
+  color: transparent;
+  font-weight: lighter;
+  font-size: 15px;
+  padding: 5px 12px !important;
+  border-radius: 20px;
+}
+#aqi-clr:hover + #aqi-description {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+@media (min-width: 1250px) {
+  #left1 {
+    height: 240px;
+  }
+  #aqi-description {
+    font-size: 13px;
+    padding: 5px 10px !important;
+    border-radius: 18px;
+  }
+  #aqi-clr {
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+  }
+}
+@media (max-width: 1400px) {
+  #left1 {
+    gap: 12px;
+    padding: 12px;
+  }
+  #left11 {
+    gap: 8px;
+  }
+  #left-main {
+    padding: 12px 25px;
+  }
+  #left1111 h5 {
+    gap: 6px;
+    font-size: 16px;
+    padding: 4px 13px;
+  }
+  #left1111 h5 i {
+    font-size: 16px;
+  }
+  #left1111 h5 span {
+    font-size: 22px;
+    padding-left: 8px !important;
+  }
+  #left1111 > h1 {
+    font-size: 55px;
+    font-weight: 200 !important;
+  }
+  #left1111 > h1 > span {
+    font-size: 25px;
+  }
+  #left112 {
+    margin: 0 17px;
+  }
+  #left112 p {
+    font-size: 18px;
+  }
+  #city-name {
+    font-size: 22px !important;
+  }
+  #left1111 {
+    gap: 12px;
+    margin-right: 25px;
+  }
+  #left1112 > div i {
+    font-size: 40px;
+  }
+  #left1112 p {
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+  #left12 {
+    gap: 17px;
+    padding: 17px;
+  }
+  #left12 > div {
+    gap: 8px;
+  }
+  #left12 > div i {
+    font-size: 18px;
+  }
+  #left12 > div p {
+    font-size: 16px;
+  }
+  #left12 > div h1 {
+    font-size: 45px;
+  }
+  #left12 > div h5 {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+}
+@media (max-width: 900px) {
+  #left1 {
+    gap: 10px;
+    padding: 10px;
+    flex-direction: column;
+  }
+  #left11 {
+    gap: 6px;
+    height: 200px;
+  }
+  #left-main {
+    padding: 10px 20px;
+  }
+  #left1111 h5 {
+    gap: 5px;
+    font-size: 14px;
+    padding: 3px 10px;
+  }
+  #left1111 h5 i {
+    font-size: 14px;
+  }
+  #left1111 h5 span {
+    font-size: 20px;
+    padding-left: 7px !important;
+  }
+  #left1111 > h1 {
+    font-size: 50px;
+    font-weight: 150 !important;
+  }
+  #left1111 > h1 > span {
+    font-size: 22px;
+  }
+  #left112 {
+    margin: 0 15px;
+  }
+  #left112 p {
+    font-size: 15px;
+  }
+  #city-name {
+    font-size: 20px !important;
+  }
+  #left1111 {
+    gap: 10px;
+    margin-right: 22px;
+  }
+  #left1112 > div i {
+    font-size: 35px;
+  }
+  #left1112 p {
+    font-size: 20px;
+    font-weight: 250;
+    letter-spacing: 2px;
+  }
+
+  #left12 {
+    gap: 15px;
+    padding: 15px;
+    height: 150px;
+  }
+  #left12 > div {
+    gap: 7px;
+  }
+  #left12 > div i {
+    font-size: 16px;
+  }
+  #left12 > div p {
+    font-size: 14px;
+  }
+  #left12 > div h1 {
+    font-size: 40px;
+  }
+  #left12 > div h5 {
+    font-size: 20px;
+  }
+
+  #aqi-description {
+    font-size: 12px;
+    padding: 4px 10px !important;
+    border-radius: 16px;
+  }
+  #aqi-clr {
+    height: 18px;
+    width: 18px;
+    margin-left: 7px;
+  }
+
+  #degree-toggle {
+    height: 27px;
+  }
+  #degree-toggle div {
+    font-size: 15px;
+    height: 25px;
+    width: 35px;
+    padding: 3px 10px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+}
+@media (max-width: 520px) {
+  #left1 {
+    gap: 8px;
+    padding: 8px;
+    height: 420px; 
+  }
+  #left11 {
+    gap: 5px;
+    
+  }
+  #left-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+  }
+  #left1111 {
+    align-self: flex-start;
+  }
+  #left1111 h5 {
+    gap: 4px;
+    font-size: 12px;
+    padding: 2px 8px;
+  }
+  #left1111 h5 i {
+    font-size: 12px;
+  }
+  #left1111 h5 span {
+    font-size: 18px;
+    padding-left: 6px !important;
+  }
+  #left1111 > h1 {
+    font-size: 40px;
+    font-weight: 120 !important;
+  }
+  #left1111 > h1 > span {
+    font-size: 20px;
+  }
+  #left112 {
+    margin: 5px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #left112 p {
+    font-size: 12px;
+  }
+  #city-name {
+    font-size: 17px !important;
+  }
+  #left1111 {
+    gap: 8px;
+    margin-right: 20px;
+  }
+  #left1112 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #left1112 > div i {
+    font-size: 30px;
+  }
+  #left1112 p {
+    margin-top: 0px !important;
+    font-size: 17px;
+    font-weight: 220;
+    letter-spacing: 1px;
+  }
+
+  #left12 {
+    gap: 12px;
+    padding: 12px;
+  }
+  #left12 > div {
+    gap: 5px;
+  }
+  #left12 > div i {
+    font-size: 14px;
+  }
+  #left12 > div p {
+    font-size: 12px;
+  }
+  #left12 > div h1 {
+    font-size: 35px;
+  }
+  #left12 > div h5 {
+    font-size: 17px;
+  }
+
+  #aqi-description {
+    font-size: 10px;
+    padding: 4px 9px !important;
+    border-radius: 15px;
+  }
+  #aqi-clr {
+    height: 16px;
+    width: 16px;
+    margin-left: 5px;
+  }
+
+  #degree-toggle {
+    height: 22px;
+  }
+  #degree-toggle div {
+    font-size: 13px;
+    height: 22px;
+    width: 30px;
+    padding: 3px 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}

@@ -1,0 +1,22 @@
+export async function checkCity(city) {
+  try {
+    const geoRes = await fetch(
+      `http://localhost:3000/api/coord?city=${encodeURIComponent(city)}`,
+    );
+
+    if (!geoRes.ok) {
+      throw new Error();
+    }
+
+    const geoData = await geoRes.json();
+    console.log("geoData from checkCity.js:", geoData);
+    return geoData;
+  }
+  catch (err) {
+    const msg = "Coordinates not found for this city!";
+    console.error("Error fom checkCity.js:", err, msg);
+    return null;
+  }
+}
+
+export default checkCity;

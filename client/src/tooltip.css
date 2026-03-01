@@ -1,0 +1,21 @@
+/* Tooltip container */
+.tooltip {
+  background-color: rgba(0, 0, 0, 0.7); /* matches container */
+  border-radius: 10px;
+}
+/* Tooltip text */
+.tooltip .tooltip-inner {
+  font-size: 14px;
+  font-weight: 200;
+  color: #cdcdcd;
+  background-color: rgba(0, 0, 0, 0.8); /* matches container */
+  border-radius: 10px;
+  padding: 3px;
+  line-height: 2;
+}
+/* Tooltip arrow */
+.tooltip .tooltip-arrow {
+  background-color: transparent; /* match background */
+}
+
+

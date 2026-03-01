@@ -1,0 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  background-color: rgb(9, 20, 53);
+  color: rgb(230, 230, 230);
+}

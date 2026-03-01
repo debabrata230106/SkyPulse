@@ -1,0 +1,88 @@
+#main {
+  padding: 17px 25px;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  min-width: 350px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#main h1,
+p,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+i,
+label {
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#main-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+  flex-grow: 1;
+}
+#left {
+  width: 70%;
+}
+
+
+@media (max-width: 1250px) {
+  #main {
+    padding: 15px 21px;
+  }
+  #main-2 {
+    flex-direction: column;
+  }
+  #left {
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  #main {
+    padding: 13px 18px;
+  }
+}@media (max-width: 500px) {
+  #main {
+    padding: 11px 15px;
+  }
+}
+@media (max-width: 350px) {
+  #main {
+    overflow-x: auto;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255);
+}
+
+/* Global animation control */
+*,
+*::before,
+*::after {
+  transition: all 0.4s ease;
+}

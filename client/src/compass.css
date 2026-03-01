@@ -1,0 +1,102 @@
+.compass-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 12px;
+}
+
+.compass-ring {
+  margin-top: 10px;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  box-shadow: rgba(255, 255, 255, 0.79) 0px 0px 10px 0px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  /* background: radial-gradient(circle, #babaee 0%, #161625 100%); */
+}
+
+/* Positioning Cardinal Letters */
+.mark {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #ffffff;
+}
+
+.n {
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(255, 70, 70) !important;
+} /* Red for North */
+.e {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.s {
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.w {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* The Needle Logic */
+.needle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth rotation */
+}
+
+.needle-pointer {
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  width: 4px;
+  height: 26%;
+  background: #ffef40e3 !important;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.compass-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #ffffff !important;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.compass-value {
+  color: #ffffffc1;
+  font-size: 18px;
+}
+
+
+@media (max-width: 1200px) {
+  .compass-wrapper {
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 850px) {
+  .compass-wrapper {
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 450px) {
+  .compass-wrapper {
+    transform: scale(0.6);
+  }
+}

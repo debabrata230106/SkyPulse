@@ -1,0 +1,35 @@
+#sugg {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 400px;
+    overflow-y: auto;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px rgba(255, 255, 255, 0.2) solid;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    margin: 0;
+}
+#sugg li {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    list-style: none;
+    width: 200px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: revert;
+    font-size: 16px;
+    font-weight: bold;
+}
+#sugg li:hover {
+    background-color: white;
+    color: black;
+}
