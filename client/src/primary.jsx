@@ -7,7 +7,7 @@ import styled from "styled-components";
 async function fetchAQI(cityName) {
   try {
     const res = await fetch(
-      `http://localhost:3000/api/aqi?city=${encodeURIComponent(cityName)}`,
+      `${import.meta.env.VITE_API_URL}/api/aqi?city=${encodeURIComponent(cityName)}`,
     );
     const data = await res.json();
     console.log("aqi data fetched from primary.jsx", data);

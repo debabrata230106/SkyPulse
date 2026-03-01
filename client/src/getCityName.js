@@ -1,7 +1,7 @@
 export async function getCityName({ latitude, longitude }) {
   try {
     const res = await fetch(
-      `http://localhost:3000/api/cityname?latitude=${encodeURIComponent(latitude)}&longitude=${encodeURIComponent(longitude)}`
+      `${import.meta.env.VITE_API_URL}/api/cityname?latitude=${encodeURIComponent(latitude)}&longitude=${encodeURIComponent(longitude)}`
     );
 
     const data = await res.json();

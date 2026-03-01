@@ -110,7 +110,7 @@ export async function fetchWeather({ latitude, longitude }) {
   try {
     // Step 2: Get weather
     const weatherRes = await fetch(
-      `http://localhost:3000/api/weather?latitude=${encodeURIComponent(latitude)}&longitude=${encodeURIComponent(longitude)}`,
+      `${import.meta.env.VITE_API_URL}/api/weather?latitude=${encodeURIComponent(latitude)}&longitude=${encodeURIComponent(longitude)}`,
     );
     const weatherData = await weatherRes.json();
     console.log("weather data from open-meteo", weatherData); //data successfully fetched from open-meteo api

@@ -1,7 +1,7 @@
 export async function checkCity(city) {
   try {
     const geoRes = await fetch(
-      `http://localhost:3000/api/coord?city=${encodeURIComponent(city)}`,
+      `${import.meta.env.VITE_API_URL}/api/coord?city=${encodeURIComponent(city)}`,
     );
 
     if (!geoRes.ok) {

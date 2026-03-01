@@ -17,7 +17,7 @@ export default function SearchBox({
       try {
         //Api fetch
         const res = await fetch(
-          `http://localhost:3000/api/cities?query=${value}`,
+          `${import.meta.env.VITE_API_URL}/api/cities?query=${value}`,
         );
         const data = await res.json();
         setSuggestions(data);
