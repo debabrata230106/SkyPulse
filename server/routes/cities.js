@@ -3,7 +3,7 @@ import { searchCities } from "../services/cityService.js";
 
 const router = express.Router();
 
-// GET /api/cities?query=kol
+// GET /api/cities?query="kol"
 router.get("/cities", async (req, res) => {
   const { query } = req.query;
 

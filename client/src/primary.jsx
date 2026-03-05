@@ -12,12 +12,9 @@ async function fetchAQI(cityName) {
     const data = await res.json();
     console.log("aqi data fetched from primary.jsx", data);
 
-    const aqi = data.aqi;
-    if (aqi === null) {
-      return null;
-    }
     return data.aqi;
-  } catch {
+  } catch(err) {
+    console.log("error in fetching aqi data in primaqry.jsx", err);
     return null;
   }
 }

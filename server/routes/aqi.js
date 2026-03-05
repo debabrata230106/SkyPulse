@@ -2,7 +2,7 @@ import express from "express";
 import { getAQI } from "../services/aqiService.js";
 
 const router = express.Router();
-
+// GET /api/aqi?query="kolkata"
 router.get("/aqi", async (req, res) => {
   const city = req.query.city?.trim();
 
@@ -13,13 +13,13 @@ router.get("/aqi", async (req, res) => {
   try {
     const result = await getAQI(city);
 
-    // Allow browser caching
-    res.set("Cache-Control", "public, max-age=600");
+    // // Allow browser caching
+    // res.set("Cache-Control", "public, max-age=600");
 
-    return res.json(result || { aqi: null });
+    res.json(result);
   } catch (err) {
-    console.error("AQI Route Error:", err);
-    return res.status(500).json({ aqi: null });
+    console.error("AQI fetch error from backend aqi.js:", err);
+    return { aqi: null };
   }
 });
 
