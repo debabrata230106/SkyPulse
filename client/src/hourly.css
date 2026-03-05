@@ -119,7 +119,6 @@
   margin-right: 8px !important;
 }
 #dates button.active {
-  color: white !important;
   box-shadow: rgba(255, 255, 255, 0.8) 0px 0px 10px 0px;
 }
 #dates button:hover {

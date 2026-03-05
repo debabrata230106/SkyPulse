@@ -41,7 +41,9 @@ export default function Hourly({ weather, monthnames, degree }) {
                     onMouseLeave={() => setDateHover(null)}
                   >{`${each.split("/")[0]}`}</span>
                   <span
-                    className={(dateHover === each) ? "mon-year show" : "mon-year"}
+                    className={
+                      dateHover === each ? "mon-year show" : "mon-year"
+                    }
                   >{`${monthnames[Number(each.split("/")[1]) - 1].slice(0, 3)} ${each.split("/")[2]}`}</span>
                 </button>
               );

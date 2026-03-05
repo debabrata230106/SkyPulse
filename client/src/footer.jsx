@@ -36,7 +36,7 @@ export default function Footer({ refreshFlag }) {
 
         <div id="links">
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/debabrata230106/SkyPulse.git"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -44,7 +44,7 @@ export default function Footer({ refreshFlag }) {
             Github
           </a>
           <a
-            href="https://github.com/your-username"
+            href="https://www.linkedin.com/in/debabrata-dey-166aa93a9/"
             target="_blank"
             rel="noopener noreferrer"
           >
