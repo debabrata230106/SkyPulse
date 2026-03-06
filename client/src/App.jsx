@@ -166,7 +166,6 @@ function App() {
     });
   }, [state.userCity, navigate]);
 
-
   if (location.pathname === "/error") {
     return <Error />;
   }

@@ -1,30 +1,37 @@
-export async function searchCity(cityName, dispatch, navigate, fetchWeather, checkCity) {
+export async function searchCity(
+  cityName,
+  dispatch,
+  navigate,
+  fetchWeather,
+  checkCity,
+) {
   if (!cityName) return; // nothing happens if input is empty
 
   dispatch({ type: "LOADING" });
+  try {
+    // Step 1: Check if city exists
+    const coords = await checkCity(cityName, navigate);
 
-  const coords = await checkCity(cityName);
+    if (!coords?.latitude) {
+      dispatch({ type: "DONE" });
+      return;
+    }
 
-  if (!coords?.latitude) {
-    navigate("/error");
-    alert("Coordinates not found!");
-    dispatch({ type: "DONE" });
-    return; // nothing happens if coordinates is not found
+    // Step 2: Fetch weather
+    const data = await fetchWeather(coords);
+
+    if (!data) {
+      navigate("/error"); // API failure
+      dispatch({ type: "DONE" });
+      return;
+    }
+
+    dispatch({ type: "SET_USER_CITY", payload: cityName });
+    dispatch({ type: "SET_WEATHER", payload: data });
+  } catch (err) {
+    console.error(err);
   }
-
-  const data = await fetchWeather(coords);
-
-  if (!data) {
-    navigate("/error");
-    alert("Weather data not found this time!");
-    dispatch({ type: "DONE" });
-    return; // nothing happens if weather data is not found
-  }
-
-  dispatch({ type: "SET_USER_CITY", payload: cityName });
-  dispatch({ type: "SET_WEATHER", payload: data }); 
   dispatch({ type: "DONE" });
-  return;
 }
 
 export default searchCity;
