@@ -5,7 +5,8 @@ import "./App.css";
 // import { checkCity } from "./checkCity.js";
 import { fetchWeather } from "./fetchWeather.js";
 import { getCityName } from "./getCityName.js";
-import { searchCity } from "./searchHandler.js"; // searchHandler.js
+import { searchCity } from "./searchHandler.js";
+import { checkCity } from "./checkCity.js";
 
 //components
 import Header from "./header.jsx";
@@ -17,8 +18,12 @@ import Loading from "./loading.jsx";
 import Sugglist from "./sugglist.jsx";
 import Footer from "./footer.jsx";
 
+// error page
+import ErrorPage from "./error.jsx";
+
 //hooks
 import { useReducer, useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 //initial state
 const initialState = {
@@ -68,6 +73,9 @@ function reducer(state, action) {
 }
 
 function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [degree, setDegree] = useState("far");
   const [fsign, fsetSign] = useState({ username: "", rating: 0, review: "" });
   const [isOpen, setIsOpen] = useState(false);
@@ -109,7 +117,7 @@ function App() {
 
         const { latitude, longitude } = pos.coords;
 
-        const data = await fetchWeather({ latitude, longitude });
+        const data = await fetchWeather({ latitude, longitude, navigate });
         const city = (await getCityName({ latitude, longitude })) || "Unknown";
 
         if (!data) {
@@ -121,7 +129,13 @@ function App() {
         }
       } catch {
         if (userCity) {
-          await searchCity(userCity, dispatch);
+          await searchCity(
+            userCity,
+            dispatch,
+            navigate,
+            fetchWeather,
+            checkCity,
+          );
         }
       }
 
@@ -130,22 +144,32 @@ function App() {
 
     boot(state.userCity);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); //warning
+  }, []);
 
   useEffect(() => {
     navigator.permissions?.query({ name: "geolocation" }).then((p) => {
       p.onchange = async () => {
         if (p.state === "granted") {
-          location.reload(); // simplest + correct UX: refresh the page
+          window.location.reload(); // simplest + correct UX: refresh the page
         }
 
         if (p.state === "denied" && state.userCity) {
-          searchCity(state.userCity, dispatch);
+          searchCity(
+            state.userCity,
+            dispatch,
+            navigate,
+            fetchWeather,
+            checkCity,
+          );
         }
       };
     });
-  }, [state.userCity]);
+  }, [state.userCity, navigate]);
 
+
+  if (location.pathname === "/error") {
+    return <Error />;
+  }
   return (
     <>
       <div id="main">
@@ -159,8 +183,9 @@ function App() {
           }
           setInput={(v) => dispatch({ type: "SET_INPUT", payload: v })}
           input={state.input}
-          onSelectCity={(city) => searchCity(city, dispatch)}
-
+          onSelectCity={(city) =>
+            searchCity(city, dispatch, navigate, fetchWeather, checkCity)
+          }
           setInputFocus={setInputFocus}
         />
 
@@ -196,11 +221,10 @@ function App() {
           setIsOpen={setIsOpen}
           fsetSign={fsetSign}
           fsign={fsign}
-          
-          triggerRefresh={() => setRefreshFlag(prev => !prev)}
+          triggerRefresh={() => setRefreshFlag((prev) => !prev)}
         />
 
-        <Footer refreshFlag={refreshFlag}/>
+        <Footer refreshFlag={refreshFlag} />
       </div>
 
       {/* only loading spinner visible when loading  */}
@@ -212,8 +236,9 @@ function App() {
           dispatch({ type: "SET_SUGGESTIONS", payload: v })
         }
         setInput={(v) => dispatch({ type: "SET_INPUT", payload: v })}
-        onSelectCity={(city) => searchCity(city, dispatch)}
-
+        onSelectCity={(city) =>
+          searchCity(city, dispatch, navigate, fetchWeather, checkCity)
+        }
         inputFocus={inputFocus}
       />
     </>

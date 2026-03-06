@@ -1,6 +1,6 @@
 export async function saveDb(fsign) {
   try {
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/savedb`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/savedb`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

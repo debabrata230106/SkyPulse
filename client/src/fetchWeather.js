@@ -118,7 +118,6 @@ export async function fetchWeather({ latitude, longitude }) {
     return makeDataset(weatherData);
   } catch (err) {
     console.error("weather data can't fetched from open-meteo api", err); // data not fetched
-
     return null;
   }
 }

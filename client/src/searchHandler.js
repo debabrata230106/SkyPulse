@@ -1,8 +1,4 @@
-// searchHandler.js
-import { checkCity } from "./checkCity.js";
-import { fetchWeather } from "./fetchWeather.js";
-
-export async function searchCity(cityName, dispatch) {
+export async function searchCity(cityName, dispatch, navigate, fetchWeather, checkCity) {
   if (!cityName) return; // nothing happens if input is empty
 
   dispatch({ type: "LOADING" });
@@ -10,7 +6,8 @@ export async function searchCity(cityName, dispatch) {
   const coords = await checkCity(cityName);
 
   if (!coords?.latitude) {
-    alert("Coordinates not found for this city!");
+    navigate("/error");
+    alert("Coordinates not found!");
     dispatch({ type: "DONE" });
     return; // nothing happens if coordinates is not found
   }
@@ -18,7 +15,8 @@ export async function searchCity(cityName, dispatch) {
   const data = await fetchWeather(coords);
 
   if (!data) {
-    alert("Weather data not found for this city!");
+    navigate("/error");
+    alert("Weather data not found this time!");
     dispatch({ type: "DONE" });
     return; // nothing happens if weather data is not found
   }

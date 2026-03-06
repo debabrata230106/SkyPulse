@@ -2,10 +2,10 @@
 import express from "express"; // the main library for writing backend
 import cors from "cors"; // allow frontend to call backend
 import dotenv from "dotenv"; // for creating and fetching data from .env files
-import rateLimit from "express-rate-limit";
 import mongoose from 'mongoose'; // the mongoDB package to connect with the database directly from vs code
 import compression from "compression";
 import morgan from "morgan";
+import helmet from "helmet";
 
 // api routes
 import aqiRoutes from "./routes/aqi.js"; // for aqi data
@@ -25,7 +25,7 @@ app.use(cors({
 }));
 app.use(compression());
 app.use(morgan("dev"));
-// app.use(limiter);
+app.use(helmet());
 // api routes
 app.use("/api", aqiRoutes);
 app.use("/api", cityRoutes);
@@ -37,11 +37,6 @@ app.use("/api", weatherRoutes);
 if (!process.env.MONGO_URI) {
   throw new Error("MONGO_URI is missing in environment variables");
 }
-// const limiter = rateLimit({
-//   windowMs: 15 * 60 * 1000, // 15 minutes
-//   max: 100, // max 100 requests per IP
-//   message: "Too many requests. Please try again later."
-// }); 
 const MONGO_URI = process.env.MONGO_URI;
 main().then(() => {
     console.log("MongoDB connected");
@@ -66,7 +61,7 @@ async function main() {
 
 // db route
 // GET route
-app.get("/usersdata", async (req, res) => {
+app.get("/api/usersdata", async (req, res) => {
   try {
     const users = await User.find().sort({ updatedAt: -1 }); // latest first
     res.json(users);
@@ -75,7 +70,7 @@ app.get("/usersdata", async (req, res) => {
   }
 });
 // POST route
-app.post("/savedb", async (req, res) => {
+app.post("/api/savedb", async (req, res) => {
   try {
     const { username, rating, review } = req.body;
 
