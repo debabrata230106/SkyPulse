@@ -109,7 +109,7 @@ function App() {
   useEffect(() => {
     async function boot(userCity) {
       dispatch({ type: "LOADING" });
-
+      alert("Welcome to SkyPulse! Please allow location to see weather of your city.");
       try {
         const pos = await new Promise((res, rej) =>
           navigator.geolocation.getCurrentPosition(res, rej),
@@ -140,6 +140,8 @@ function App() {
       }
 
       dispatch({ type: "DONE" });
+
+      alert("Please rate this site (click login button).");
     }
 
     boot(state.userCity);
