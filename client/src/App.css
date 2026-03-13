@@ -87,7 +87,3 @@ label {
   transition: all 0.2s ease;
 }
 
-html {
-  zoom: 0.8;
-  scroll-behavior: smooth;
-}
